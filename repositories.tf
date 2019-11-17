@@ -9,3 +9,9 @@ resource "github_repository" "tf-github" {
   gitignore_template = "Terraform"
   license_template   = "mit"
 }
+
+resource "github_team_repository" "tf-github-contributors" {
+  team_id    = github_team.contributors.id
+  repository = github_repository.tf-github.name
+  permission = "push"
+}
