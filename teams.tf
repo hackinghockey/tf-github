@@ -1,5 +1,5 @@
 resource "github_team" "contributors" {
-  name        = "contributors"
+  name = "contributors"
 }
 
 resource "github_team_membership" "some_team_membership" {
