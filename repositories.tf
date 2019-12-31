@@ -34,8 +34,8 @@ resource "github_team_repository" "sandbox-contributors" {
   permission = "push"
 }
 
-resource "github_repository" "site" {
-  name               = "site"
+resource "github_repository" "dotcom" {
+  name               = "dotcom"
   description        = "Code for hackinghockey.com"
   private            = false
   allow_merge_commit = false
@@ -46,8 +46,8 @@ resource "github_repository" "site" {
   license_template   = "mit"
 }
 
-resource "github_team_repository" "site-contributors" {
+resource "github_team_repository" "dotcom-contributors" {
   team_id    = github_team.contributors.id
-  repository = github_repository.site.name
+  repository = github_repository.dotcom.name
   permission = "push"
 }
